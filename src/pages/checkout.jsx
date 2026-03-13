@@ -1,0 +1,23 @@
+import React from "react";
+// internal
+import SEO from "@/components/seo";
+import { seoDescriptions } from "@/data/seo-descriptions";
+import Wrapper from "@/layout/wrapper";
+import HeaderTwo from "@/layout/headers/header-2";
+import Footer from "@/layout/footers/footer";
+import CommonBreadcrumb from "@/components/breadcrumb/common-breadcrumb";
+import CheckoutArea from "@/components/checkout/checkout-area";
+
+const CheckoutPage = () => {
+  return (
+    <Wrapper>
+      <SEO pageTitle="Checkout" description={seoDescriptions.checkout} />
+      <HeaderTwo style_2={true} />
+      <CommonBreadcrumb title="Checkout" subtitle="Checkout" bg_clr={true} />
+      <CheckoutArea />
+      <Footer style_2={true} primary_style={true} />
+    </Wrapper>
+  );
+};
+
+export default CheckoutPage;

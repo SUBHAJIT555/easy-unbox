@@ -1,0 +1,24 @@
+// Easy Unboxing – friendly, readable typography
+// Poppins: headings | Inter: body
+
+$font-url: 'https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap';
+
+$font-family: (
+    'ff': (
+        'body': "'Inter', system-ui, sans-serif",
+        'heading': "'Poppins', system-ui, sans-serif",
+        'p': "'Inter', system-ui, sans-serif",
+        'jost': "'Poppins', system-ui, sans-serif",
+        'fontawesome': '"Font Awesome 6 Pro"',
+        'roboto': "'Inter', system-ui, sans-serif",
+        'oregano': "'Poppins', system-ui, sans-serif",
+        'charm': "'Poppins', system-ui, sans-serif",
+    )
+);
+
+$font-size: (
+    'fz': (
+        'body': 16px,
+        'p': 16px,
+    )
+);

@@ -1,0 +1,78 @@
+// Easy Unboxing – warm, clean Indian brand palette
+// No neobrutalism: soft greys, teal primary, amber accent, cream backgrounds
+
+$colors: (
+    'common': (
+        'white': #ffffff,
+        'black-solid': #1c1917,
+        'black': #1c1917,
+    ),
+    'yellow': (
+        '1': #fbbf24,
+        '2': #f59e0b,
+        '3': #d97706,
+    ),
+    'pink': (
+        '1': #ec4899,
+        '2': #db2777,
+        '3': #be185d,
+        '4': #f472b6,
+    ),
+    'green': (
+        'dark': #0f766e,
+        '1': #14b8a6,
+    ),
+    'khaki': (
+        '1': #d6d3d1,
+    ),
+    'blue': (
+        '1': #0d9488,
+    ),
+    'orange': (
+        '1': #ea580c,
+    ),
+    'heading': (
+        'primary': #1c1917,
+        'secondary': #292524,
+    ),
+    'grey': (
+        '1': #fafaf9,
+        '2': #f5f5f4,
+        '3': #e7e5e4,
+        '4': #fafaf9,
+        '5': #e7e5e4,
+        '6': #d6d3d1,
+        '7': #f5f5f4,
+        '8': #e7e5e4,
+        '9': #d6d3d1,
+    ),
+    'text': (
+        'body': #44403c,
+        '1': #292524,
+        '2': #44403c,
+        '3': #57534e,
+        '4': #57534e,
+        '5': #78716c,
+        '6': #a8a29e,
+    ),
+    'theme': (
+        'primary': #0d9488,
+        'secondary': #f59e0b,
+        'brown': #b45309,
+        'green': #14b8a6,
+    ),
+    'footer': (
+        'grey-1': #f5f5f4,
+    ),
+    'border': (
+        'primary': rgba(28, 25, 23, 0.12),
+        'secondary': rgba(28, 25, 23, 0.08),
+        '3': rgba(28, 25, 23, 0.15),
+        '4': #e7e5e4,
+    )
+);
+
+$white : #fff;
+$black : #1c1917;
+$theme-primary : #0d9488;
+$border-primary : rgba(28, 25, 23, 0.12);

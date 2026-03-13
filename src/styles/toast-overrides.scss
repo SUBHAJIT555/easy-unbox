@@ -1,0 +1,101 @@
+// Override react-toastify styles for Easy Unboxing – clean, soft style
+// Import this after react-toastify.css so these rules take precedence
+
+$nb-black: #1a1a1a;
+$nb-success: #31B757;
+$nb-error: #FD4B6B;
+$nb-cream: #FFFBF7;
+
+.easy-unboxing-toast {
+  --toastify-toast-width: 380px;
+  --toastify-toast-top: 1.25rem;
+  --toastify-toast-right: 1.25rem;
+  --toastify-color-success: #{$nb-success};
+  --toastify-color-error: #{$nb-error};
+  --toastify-color-light: #{$nb-cream};
+  --toastify-text-color-light: #{$nb-black};
+  --toastify-color-progress-success: #{$nb-success};
+  --toastify-color-progress-error: #{$nb-error};
+  padding: 0;
+}
+
+.easy-unboxing-toast .Toastify__toast-container {
+  width: var(--toastify-toast-width);
+}
+
+/* Soft style: rounded, thin border, soft shadow */
+.easy-unboxing-toast .Toastify__toast {
+  border-radius: 12px;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.12);
+  padding: 16px 18px;
+  min-height: 60px;
+  background: $nb-cream !important;
+  color: $nb-black;
+  font-weight: 600;
+}
+
+.easy-unboxing-toast .Toastify__toast--success {
+  background: $nb-cream !important;
+  color: $nb-black;
+}
+
+.easy-unboxing-toast .Toastify__toast--error {
+  background: $nb-cream !important;
+  color: $nb-black;
+}
+
+.easy-unboxing-toast .Toastify__toast-icon {
+  width: 28px;
+  margin-inline-end: 14px;
+  filter: none;
+}
+
+.easy-unboxing-toast .Toastify__toast--success .Toastify__toast-icon {
+  color: $nb-success;
+}
+
+.easy-unboxing-toast .Toastify__toast--error .Toastify__toast-icon {
+  color: $nb-error;
+}
+
+.easy-unboxing-toast-body {
+  font-size: 0.9375rem;
+  font-weight: 600;
+  line-height: 1.4;
+  padding: 0;
+  color: $nb-black;
+}
+
+.easy-unboxing-toast .Toastify__close-button {
+  color: $nb-black;
+  opacity: 1;
+  align-self: center;
+  font-weight: 700;
+}
+
+.easy-unboxing-toast .Toastify__close-button:hover {
+  color: $nb-black;
+  opacity: 0.7;
+}
+
+/* Progress bar – soft rounded */
+.easy-unboxing-toast .Toastify__progress-bar {
+  height: 3px;
+  border-radius: 0 0 12px 12px;
+  background: rgba(0, 0, 0, 0.15) !important;
+}
+
+.easy-unboxing-toast .Toastify__toast--success .Toastify__progress-bar {
+  background: $nb-success !important;
+}
+
+.easy-unboxing-toast .Toastify__toast--error .Toastify__progress-bar {
+  background: $nb-error !important;
+}
+
+/* Remove any default pointer/arrow from library */
+.easy-unboxing-toast .Toastify__toast::before,
+.easy-unboxing-toast .Toastify__toast::after {
+  display: none !important;
+}

@@ -1,0 +1,243 @@
+@use '../../utils' as *;
+
+/*----------------------------------------*/
+/*  7.2 About css
+/*----------------------------------------*/
+
+
+.#{$theme-prifix}-about{
+    &-wrapper{
+        @media #{$lg}{
+            padding-left: 35px;
+            padding-top: 15px;
+            padding-right: 0;
+        }
+        @media #{$md, $sm, $xs}{
+            padding-left: 0;
+            padding-right: 0;
+        }
+        @media #{$xs}{
+            margin-right: 0;
+            margin-top: 50px;
+        }
+    }
+    &-thumb{
+        & img{
+            width: 100%;
+            height: 100%;
+        }
+        &-2{
+            position: absolute;
+            bottom: -60px;
+            right: -165px;
+
+            @media #{$md}{
+                right: 0;
+            }
+            @media #{$sm}{
+                right: -30px;
+            }
+            @media #{$xs}{
+                right: 0;
+            }
+
+            & img{
+                @media #{$xs}{
+                    width: 70%;
+                    height: 70%;
+                }
+            }
+        }
+    }
+    &-content{
+        @media #{$md, $sm, $xs}{
+            padding-left: 0;
+        }
+        & p{
+            font-size: 16px;
+            line-height: 1.62;
+            margin-bottom: 40px;
+
+            @media #{$sm, $xs}{
+                & br{
+                    display: none;
+                }
+            }
+        }
+    }
+}
+
+/* About section - Neo brutalism */
+.#{$theme-prifix}-about-area{
+    .tp-about-thumb-wrapper{
+        border: 3px solid var(--tp-common-black);
+        box-shadow: 6px 6px 0 var(--tp-common-black);
+        overflow: visible;
+    }
+    .tp-about-thumb{
+        display: block;
+        & img{
+            display: block;
+        }
+    }
+    .tp-about-thumb-2{
+        border: 3px solid var(--tp-common-black);
+        box-shadow: 4px 4px 0 var(--tp-common-black);
+        @media #{$sm, $xs}{
+            position: static !important;
+            bottom: auto;
+            right: auto;
+            margin-top: 24px;
+            display: inline-block;
+        }
+    }
+    .tp-about-wrapper{
+        background-color: var(--tp-common-white);
+        border: 3px solid var(--tp-common-black);
+        box-shadow: 6px 6px 0 var(--tp-common-black);
+        padding: 48px 48px 56px 80px !important;
+        @media #{$lg}{
+            padding: 40px 40px 48px 35px !important;
+        }
+        @media #{$md, $sm, $xs}{
+            padding: 32px 24px 40px !important;
+        }
+    }
+    .tp-section-title-pre-4{
+        font-family: var(--tp-ff-heading);
+        font-weight: 700;
+        font-size: 14px;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        color: var(--tp-theme-primary);
+    }
+    .tp-section-title-4{
+        font-family: var(--tp-ff-heading);
+        font-weight: 700;
+        color: var(--tp-common-black);
+        margin-bottom: 0;
+    }
+    .tp-about-content{
+        & p{
+            font-family: var(--tp-ff-body);
+            color: var(--tp-text-body);
+            & strong{
+                color: var(--tp-common-black);
+                font-weight: 700;
+            }
+        }
+    }
+    .tp-about-btn .tp-btn{
+        margin-top: 8px;
+    }
+}
+
+/* About page – Neo brutalism (breadcrumb, mission, choose, features) */
+.tp-about-page-neo{
+    .breadcrumb__area{
+        background-color: var(--tp-grey-1);
+        border-top: 3px solid var(--tp-common-black);
+        border-bottom: 3px solid var(--tp-common-black);
+    }
+    .breadcrumb__title{
+        font-family: var(--tp-ff-heading);
+        font-weight: 700;
+        color: var(--tp-common-black);
+    }
+
+    .tp-about-area{
+        padding-top: 48px;
+        background-color: var(--tp-grey-1);
+    }
+
+    .tp-about-mission-area{
+        background-color: var(--tp-grey-1) !important;
+        border-top: 3px solid var(--tp-common-black);
+        border-bottom: 3px solid var(--tp-common-black);
+        padding-top: 64px;
+        padding-bottom: 64px;
+    }
+    .tp-about-mission-item{
+        background-color: var(--tp-common-white);
+        border: 3px solid var(--tp-common-black);
+        box-shadow: 6px 6px 0 var(--tp-common-black);
+        border-radius: 0;
+        padding: 32px 28px 36px;
+        height: 100%;
+    }
+    .tp-about-mission-title{
+        font-family: var(--tp-ff-heading) !important;
+        font-weight: 700 !important;
+        color: var(--tp-common-black) !important;
+    }
+    .tp-about-mission-icon-wrapper{
+        display: inline-block;
+    }
+
+    .tp-about-choose-area{
+        background-color: var(--tp-grey-1);
+        border-top: 3px solid var(--tp-common-black);
+        padding-top: 64px;
+        padding-bottom: 64px;
+    }
+    .tp-about-choose-thumb{
+        border: 3px solid var(--tp-common-black);
+        box-shadow: 6px 6px 0 var(--tp-common-black);
+        border-radius: 0;
+        overflow: hidden;
+    }
+    .tp-about-choose-thumb img{
+        display: block;
+    }
+    .tp-about-choose-item{
+        padding: 20px 20px 24px;
+        background-color: var(--tp-common-white);
+        border: 3px solid var(--tp-common-black);
+        box-shadow: 4px 4px 0 var(--tp-common-black);
+        border-radius: 0;
+        margin-bottom: 20px !important;
+    }
+    .tp-about-choose-item:last-child{
+        margin-bottom: 0 !important;
+    }
+    .tp-about-choose-content-text h5{
+        font-family: var(--tp-ff-heading) !important;
+        font-weight: 700 !important;
+        color: var(--tp-common-black) !important;
+    }
+
+    .tp-about-btn .tp-btn{
+        border: 3px solid var(--tp-common-black);
+        box-shadow: 4px 4px 0 var(--tp-common-black);
+        border-radius: 0;
+        font-weight: 600;
+        @include tp-transition(all, .18s ease-out);
+
+        &:hover{
+            transform: translate(2px, 2px);
+            box-shadow: 2px 2px 0 var(--tp-common-black);
+        }
+    }
+
+    /* Features strip at bottom of about page */
+    .tp-feature-area.tp-feature-border-3{
+        background-color: var(--tp-common-white);
+        border: 3px solid var(--tp-common-black);
+        box-shadow: 6px 6px 0 var(--tp-common-black);
+        border-radius: 0;
+        padding: 40px 24px 48px;
+    }
+    .tp-feature-item-2{
+        padding: 16px 0;
+        border-bottom: 2px solid var(--tp-border-primary);
+
+        &:last-child{
+            border-bottom: 0;
+        }
+    }
+    .tp-feature-title-2{
+        font-family: var(--tp-ff-heading);
+        font-weight: 700;
+        color: var(--tp-common-black);
+    }
+}

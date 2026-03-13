@@ -1,0 +1,106 @@
+/**
+ * Easy Unboxing – remove neobrutalism effect site-wide.
+ * Import this last so it overrides thick borders and offset shadows.
+ */
+
+/* Product cards & add-to-cart */
+.tp-product-item-4,
+.tp-product-item,
+.tp-product-add-to-cart-4,
+.tp-product-action-btn-3,
+.tp-product-tab-3 .nav-tabs .nav-link.active,
+.tp-product-thumb-4,
+.tp-product-thumb,
+.tp-btn-border-sm {
+  border-width: 1px !important;
+  border-color: rgba(0, 0, 0, 0.12) !important;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08) !important;
+  &:hover {
+    transform: none !important;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12) !important;
+  }
+}
+
+.tp-product-item-4:hover,
+.tp-product-item:hover {
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12) !important;
+  transform: none !important;
+}
+
+.tp-product-thumb-4,
+.tp-product-thumb {
+  border-bottom-width: 1px !important;
+}
+
+/* Banners */
+.tp-banner-item-4,
+.tp-banner-full,
+.tp-banner-btn-4 .tp-btn {
+  border-width: 1px !important;
+  border-color: rgba(0, 0, 0, 0.12) !important;
+  border-radius: 10px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1) !important;
+  &:hover {
+    transform: none !important;
+    box-shadow: 0 6px 24px rgba(0, 0, 0, 0.14) !important;
+  }
+}
+
+.tp-banner-thumb-4 {
+  border-bottom-width: 1px !important;
+}
+
+/* Shop, category, cart, checkout, widget, collection – shared button/card neo */
+.tp-shop-filter-btn,
+.tp-category-btn,
+.tp-collection-btn,
+.tp-widget-add-cart,
+.tp-cart-btn,
+.tp-checkout-btn,
+.tp-filter-btn,
+[class*="tp-product-list-add-to-cart"],
+[class*="tp-load-more"],
+[class*="tp-menu-showcase-btn"] {
+  border-width: 1px !important;
+  border-color: rgba(0, 0, 0, 0.1) !important;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08) !important;
+  &:hover {
+    transform: none !important;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12) !important;
+  }
+}
+
+/* Pages: about, contact, feature, terms, slider */
+.tp-about-btn,
+.tp-contact-btn,
+.tp-feature-btn,
+.tp-terms-btn,
+.tp-slider-btn,
+.tp-error-btn {
+  border-width: 1px !important;
+  border-color: rgba(0, 0, 0, 0.12) !important;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08) !important;
+  &:hover {
+    transform: none !important;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12) !important;
+  }
+}
+
+/* Slider 4 – arrows and nav (no neo) */
+.tp-slider-arrow-4 button,
+.tp-slider-nav .tp-slider-nav-item.slick-current.slick-active {
+  border-width: 1px !important;
+  border-radius: 12px !important;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08) !important;
+  &:hover {
+    transform: none !important;
+  }
+}
+.tp-slider-nav {
+  border-radius: 16px !important;
+  border-width: 1px !important;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08) !important;
+}

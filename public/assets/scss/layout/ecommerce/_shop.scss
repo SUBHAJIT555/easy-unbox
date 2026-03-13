@@ -1,0 +1,314 @@
+@use '../../utils' as *;
+
+/*----------------------------------------*/
+/*  8.16 Shop CSS
+/*----------------------------------------*/
+
+
+.#{$theme-prifix}-shop-top{
+    &-select{
+        & .nice-select{
+            background-color: #F9F9F9;
+            border: 1px solid rgba($color: $black, $alpha: .1);
+            border-radius: 0;
+            font-size: 14px;
+            color: var(--tp-common-black);
+            height: 40px;
+            line-height: 38px;
+            padding: 0 25px;
+            min-width: 204px;
+            float: none;
+
+            @media #{$xs}{
+                max-width: 280px;
+            }
+            &::after{
+                right: 20px;
+                color: #767A7D;
+            }
+
+            &.open{
+                & .list{
+                    @include transform(scale(1) translateY(0px));
+                }
+            }
+
+            & .list{
+                margin-top: 0;
+                border-radius: 0;
+                transform-origin: center center;
+                @include transform(scale(.9) translateY(0px));
+                width: 100%;
+                padding: 10px 0;
+                & .option{
+                    line-height: 1.2;
+                    min-height: inherit;
+                    padding-top: 5px;
+                    padding-bottom: 5px;
+                }
+            }
+        }
+    }
+    &-filter{
+        margin-left: 16px;
+        @media #{$xs}{
+            margin-left: 0;
+            margin-top: 15px;
+        }
+    }
+    &-result{
+        & p{
+            font-weight: 400;
+            font-size: 16px;
+            color: #818487;
+            margin-bottom: 0;
+        }
+    }
+    &-tab{
+        margin-right: 22px;
+        @media #{$xs}{
+            margin-right: 10px;
+        }
+        & .nav-tabs{
+            & .nav-item{
+                & .nav-link{
+                    display: inline-block;
+                    width: 40px;
+                    height: 40px;
+                    line-height: 38px;
+                    text-align: center;
+                    font-size: 18px;
+                    color: #818487;
+                    border: 1px solid rgba($color: $black, $alpha: .1);
+                    border-radius: 0;
+                    margin-right: 6px;
+                    & svg{
+                        @extend %tp-svg-y-2;
+                    }
+                    &.active{
+                        color: var(--tp-common-black);
+                        border-color: var(--tp-common-black);
+                    }
+                }
+            }
+        }
+    }
+    &-right{
+        @media #{$sm, $xs}{
+            margin-top: 30px;
+        }
+        &:not(.tp-shop-top-right-2){
+            @media #{$lg, $md, $sm, $xs}{
+                margin-top: 30px;
+            }
+        }
+    }
+}
+
+/* Shop page – Neo brutalism */
+.tp-shop-area-neo{
+    background-color: var(--tp-grey-1);
+    border-top: 3px solid var(--tp-common-black);
+    border-bottom: 3px solid var(--tp-common-black);
+    padding-top: 48px;
+
+    .tp-shop-main-wrapper{
+        background-color: var(--tp-common-white);
+        border: 3px solid var(--tp-common-black);
+        box-shadow: 6px 6px 0 var(--tp-common-black);
+        padding: 24px 24px 28px;
+        border-radius: 0;
+    }
+
+    .tp-shop-sidebar{
+        background-color: var(--tp-common-white);
+        border: 3px solid var(--tp-common-black);
+        box-shadow: 6px 6px 0 var(--tp-common-black);
+        padding: 20px 20px 24px;
+        border-radius: 0;
+    }
+
+    .tp-shop-top{
+        padding-bottom: 18px;
+        margin-bottom: 32px;
+        border-bottom: 3px solid var(--tp-common-black);
+    }
+
+    /* Top bar: view toggle + sort */
+    .tp-shop-top-tab .nav-tabs .nav-link{
+        width: 40px;
+        height: 40px;
+        line-height: 38px;
+        border: 3px solid var(--tp-common-black);
+        border-radius: 0;
+        box-shadow: 4px 4px 0 var(--tp-common-black);
+        background-color: var(--tp-common-white);
+        color: var(--tp-common-black);
+        @include tp-transition(all, .18s ease-out);
+
+        &.active{
+            background-color: var(--tp-theme-primary);
+            color: var(--tp-common-white);
+        }
+
+        &:hover{
+            transform: translate(2px,2px);
+            box-shadow: 2px 2px 0 var(--tp-common-black);
+        }
+    }
+
+    .tp-shop-top-select .nice-select{
+        background-color: var(--tp-common-white);
+        border: 3px solid var(--tp-common-black);
+        border-radius: 0;
+        box-shadow: 4px 4px 0 var(--tp-common-black);
+        font-family: var(--tp-ff-heading);
+        font-weight: 600;
+    }
+
+    .tp-shop-top-result p{
+        font-family: var(--tp-ff-heading);
+        font-weight: 500;
+        color: var(--tp-common-black);
+    }
+
+    /* Gap between product rows */
+    .tp-shop-items-wrapper .row > [class*="col-"]{
+        margin-bottom: 28px;
+    }
+
+    /* Product cards – reuse brutalist card style */
+    .tp-product-item-2{
+        background-color: var(--tp-common-white);
+        border-radius: 0;
+        border: 3px solid var(--tp-common-black);
+        box-shadow: 5px 5px 0 var(--tp-common-black);
+        height: 100%;
+        @include tp-transition(all, .18s ease-out);
+
+        &:hover{
+            box-shadow: 3px 3px 0 var(--tp-common-black);
+            transform: translate(2px,2px);
+        }
+    }
+
+    .tp-product-thumb-2{
+        background-color: var(--tp-common-white);
+        border-bottom: 3px solid var(--tp-common-black);
+    }
+
+    .tp-product-action-btn-2{
+        background-color: var(--tp-theme-secondary);
+        border: 3px solid var(--tp-common-black);
+        border-radius: 0;
+        color: var(--tp-common-black);
+        box-shadow: 4px 4px 0 var(--tp-common-black);
+        @include tp-transition(all, .18s ease-out);
+
+        &:hover{
+            background-color: var(--tp-theme-primary);
+            color: var(--tp-common-white);
+            transform: translate(2px,2px);
+            box-shadow: 2px 2px 0 var(--tp-common-black);
+        }
+
+        & svg{
+            stroke: currentColor;
+        }
+    }
+
+    .tp-product-title-2 a{
+        font-family: var(--tp-ff-heading);
+        font-weight: 600;
+        color: var(--tp-common-black);
+    }
+
+    .tp-product-price-2{
+        font-weight: 700;
+        color: var(--tp-common-black);
+    }
+
+    .tp-shop-pagination .tp-pagination ul li a{
+        border-radius: 0;
+        border: 3px solid var(--tp-common-black);
+        box-shadow: 4px 4px 0 var(--tp-common-black);
+
+        &:hover,
+        &.current{
+            background-color: var(--tp-theme-primary);
+            color: var(--tp-common-white);
+            transform: translate(2px,2px);
+            box-shadow: 2px 2px 0 var(--tp-common-black);
+        }
+    }
+
+    /* List view – Neo brutalism */
+    .tp-shop-list-wrapper .tp-product-list-item{
+        margin-bottom: 28px;
+        border: 3px solid var(--tp-common-black);
+        box-shadow: 5px 5px 0 var(--tp-common-black);
+        border-radius: 0;
+        background-color: var(--tp-common-white);
+        overflow: hidden;
+        @include tp-transition(all, .18s ease-out);
+
+        &:last-child{
+            margin-bottom: 0;
+        }
+
+        &:hover{
+            box-shadow: 3px 3px 0 var(--tp-common-black);
+            transform: translate(2px, 2px);
+        }
+    }
+
+    .tp-shop-list-wrapper .tp-product-list-thumb{
+        border-right: 3px solid var(--tp-common-black);
+        background-color: var(--tp-grey-1);
+
+        & a,
+        & > div{
+            display: block;
+            background-color: var(--tp-grey-1);
+        }
+    }
+
+    .tp-shop-list-wrapper .tp-product-list-content{
+        border: none !important;
+        border-left: none !important;
+        background-color: var(--tp-common-white);
+        padding-left: 32px !important;
+        padding-right: 32px !important;
+
+        @media #{$md, $sm, $xs}{
+            padding-left: 24px !important;
+            padding-right: 24px !important;
+        }
+        @media #{$xs}{
+            border-top: 3px solid var(--tp-common-black) !important;
+        }
+    }
+
+    .tp-shop-list-wrapper .tp-product-list-add-to-cart-btn{
+        border-radius: 0 !important;
+        border: 3px solid var(--tp-common-black) !important;
+        box-shadow: 4px 4px 0 var(--tp-common-black) !important;
+        font-weight: 600;
+        @include tp-transition(all, .18s ease-out);
+
+        &:hover{
+            transform: translate(2px, 2px);
+            box-shadow: 2px 2px 0 var(--tp-common-black) !important;
+        }
+    }
+}
+
+.#{$theme-prifix}-shop-item-primary{
+    .tp-product-tag-2 a:hover,
+    .tp-product-title-2 a:hover {
+        color: var(--tp-theme-primary);
+    }
+    .tp-product-tag-2 a::after {
+        background-color: var(--tp-theme-primary);
+    }
+}

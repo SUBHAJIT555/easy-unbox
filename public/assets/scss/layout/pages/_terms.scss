@@ -1,0 +1,106 @@
+@use '../../utils' as *;
+
+/*----------------------------------------*/
+/*  Legal pages (Privacy, Terms, Cookie, Refund) – Neo brutalism
+/*----------------------------------------*/
+
+.tp-legal-page-neo {
+  .breadcrumb__area {
+    background-color: var(--tp-grey-1);
+    border-top: 3px solid var(--tp-common-black);
+    border-bottom: 3px solid var(--tp-common-black);
+  }
+  .breadcrumb__title {
+    font-family: var(--tp-ff-heading);
+    font-weight: 700;
+    color: var(--tp-common-black);
+  }
+
+  .tp-terms-area {
+    padding-top: 48px;
+    background-color: var(--tp-grey-1);
+  }
+
+  .tp-terms-wrapper {
+    background-color: var(--tp-common-white);
+    border: 3px solid var(--tp-common-black);
+    box-shadow: 6px 6px 0 var(--tp-common-black);
+    border-radius: 0;
+    padding: 40px 40px 48px;
+
+    @media #{$xs} {
+      padding: 24px 20px 32px;
+    }
+  }
+
+  .tp-section-title-4 {
+    font-family: var(--tp-ff-heading) !important;
+    font-weight: 700 !important;
+    color: var(--tp-common-black) !important;
+  }
+
+  .tp-terms-content > p,
+  .tp-terms-content .tp-terms-section p {
+    font-family: var(--tp-ff-body);
+    font-weight: 500;
+    color: var(--tp-common-black);
+    line-height: 1.7;
+  }
+
+  .tp-terms-section h3 {
+    font-family: var(--tp-ff-heading) !important;
+    font-weight: 700 !important;
+    font-size: 22px !important;
+    color: var(--tp-common-black) !important;
+    padding-bottom: 12px;
+    margin-bottom: 16px !important;
+    border-bottom: 3px solid var(--tp-common-black);
+  }
+
+  .tp-terms-list {
+    list-style: none !important;
+    padding-left: 0 !important;
+
+    li {
+      position: relative;
+      padding-left: 24px;
+      margin-bottom: 12px;
+      font-family: var(--tp-ff-body);
+      font-weight: 500;
+      color: var(--tp-common-black);
+      line-height: 1.7;
+
+      &::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 10px;
+        width: 8px;
+        height: 8px;
+        background-color: var(--tp-common-black);
+        border: 2px solid var(--tp-common-black);
+      }
+    }
+  }
+
+  .tp-terms-content a {
+    color: var(--tp-theme-primary);
+    font-weight: 600;
+    text-decoration: underline;
+
+    &:hover {
+      color: var(--tp-common-black);
+    }
+  }
+
+  .tp-terms-agreement {
+    border-top: 3px solid var(--tp-common-black) !important;
+    padding-top: 32px !important;
+    margin-top: 48px !important;
+  }
+  .tp-terms-agreement p {
+    font-family: var(--tp-ff-body);
+    font-weight: 500;
+    color: var(--tp-common-black) !important;
+  }
+}
