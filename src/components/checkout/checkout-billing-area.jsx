@@ -3,14 +3,14 @@ import ErrorMsg from "../common/error-msg";
 
 const CheckoutBillingArea = ({ register, errors }) => {
   return (
-    <div className="tp-checkout-bill-area">
-      <h3 className="tp-checkout-bill-title">Billing Details</h3>
+    <div className="easyunbox-checkout__bill">
+      <h3 className="easyunbox-checkout__bill-title">Billing Details</h3>
 
-      <div className="tp-checkout-bill-form">
-        <div className="tp-checkout-bill-inner">
+      <div className="easyunbox-checkout__bill-form">
+        <div className="easyunbox-checkout__bill-inner">
           <div className="row">
             <div className="col-md-6">
-              <div className="tp-checkout-input">
+              <div className="easyunbox-checkout-input">
                 <label>First Name <span>*</span></label>
                 <input
                   {...register("firstName", { required: "First name is required" })}
@@ -23,7 +23,7 @@ const CheckoutBillingArea = ({ register, errors }) => {
               </div>
             </div>
             <div className="col-md-6">
-              <div className="tp-checkout-input">
+              <div className="easyunbox-checkout-input">
                 <label>Last Name <span>*</span></label>
                 <input
                   {...register("lastName", { required: "Last name is required" })}
@@ -36,7 +36,7 @@ const CheckoutBillingArea = ({ register, errors }) => {
               </div>
             </div>
             <div className="col-md-12">
-              <div className="tp-checkout-input">
+              <div className="easyunbox-checkout-input">
                 <label>Street address <span>*</span></label>
                 <input
                   {...register("address", { required: "Street address is required" })}
@@ -49,7 +49,7 @@ const CheckoutBillingArea = ({ register, errors }) => {
               </div>
             </div>
             <div className="col-md-12">
-              <div className="tp-checkout-input">
+              <div className="easyunbox-checkout-input">
                 <label>Town / City <span>*</span></label>
                 <input
                   {...register("city", { required: "Town/City is required" })}
@@ -62,7 +62,7 @@ const CheckoutBillingArea = ({ register, errors }) => {
               </div>
             </div>
             <div className="col-md-6">
-              <div className="tp-checkout-input">
+              <div className="easyunbox-checkout-input">
                 <label>State / Country (optional)</label>
                 <input
                   {...register("state")}
@@ -74,7 +74,7 @@ const CheckoutBillingArea = ({ register, errors }) => {
               </div>
             </div>
             <div className="col-md-6">
-              <div className="tp-checkout-input">
+              <div className="easyunbox-checkout-input">
                 <label>Postcode / ZIP (optional)</label>
                 <input
                   {...register("zipCode")}
@@ -86,7 +86,7 @@ const CheckoutBillingArea = ({ register, errors }) => {
               </div>
             </div>
             <div className="col-md-12">
-              <div className="tp-checkout-input">
+              <div className="easyunbox-checkout-input">
                 <label>Phone <span>*</span></label>
                 <input
                   {...register("contactNo", { required: "Phone is required" })}
@@ -99,7 +99,7 @@ const CheckoutBillingArea = ({ register, errors }) => {
               </div>
             </div>
             <div className="col-md-12">
-              <div className="tp-checkout-input">
+              <div className="easyunbox-checkout-input">
                 <label>Email address <span>*</span></label>
                 <input
                   {...register("email", {
@@ -118,7 +118,7 @@ const CheckoutBillingArea = ({ register, errors }) => {
               </div>
             </div>
             <div className="col-md-12">
-              <div className="tp-checkout-input">
+              <div className="easyunbox-checkout-input">
                 <label>Note about your order (optional)</label>
                 <textarea
                   {...register("orderNote")}

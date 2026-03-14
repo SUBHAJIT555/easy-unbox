@@ -8,31 +8,31 @@ const CheckoutOrderArea = ({ checkoutData }) => {
   const { total: cartTotal } = useCartInfo();
 
   return (
-    <div className="tp-checkout-place white-bg">
-      <h3 className="tp-checkout-place-title">Your Order</h3>
+    <div className="easyunbox-checkout__order">
+      <h3 className="easyunbox-checkout__order-title">Your Order</h3>
 
-      <div className="tp-order-info-list">
+      <div className="easyunbox-checkout__order-list">
         <ul>
-          <li className="tp-order-info-list-header">
-            <h4>Product</h4>
-            <h4>Total</h4>
+          <li className="easyunbox-checkout__order-header">
+            <span>Product</span>
+            <span>Total</span>
           </li>
 
           {cart_products.map((item) => (
-            <li key={item._id} className="tp-order-info-list-desc">
-              <p>
-                {item.title} <span> x {item.orderQuantity}</span>
-              </p>
+            <li key={item._id} className="easyunbox-checkout__order-row">
+              <span>
+                {item.title} <em>× {item.orderQuantity}</em>
+              </span>
               <span>₹{((item.discountedPrice ?? item.price) * item.orderQuantity).toFixed(2)}</span>
             </li>
           ))}
 
-          <li className="tp-order-info-list-subtotal">
+          <li className="easyunbox-checkout__order-subtotal">
             <span>Subtotal</span>
             <span>₹{cartTotal.toFixed(2)}</span>
           </li>
 
-          <li className="tp-order-info-list-total">
+          <li className="easyunbox-checkout__order-total">
             <span>Total</span>
             <span>₹{cartTotal.toFixed(2)}</span>
           </li>
@@ -40,16 +40,16 @@ const CheckoutOrderArea = ({ checkoutData }) => {
       </div>
 
       {error && (
-        <div className="tp-checkout-error mb-3" style={{ color: "#c00", fontSize: "14px" }}>
+        <div className="easyunbox-checkout__error">
           {error}
         </div>
       )}
 
-      <div className="tp-checkout-btn-wrapper">
+      <div className="easyunbox-checkout__submit">
         <button
           type="submit"
           disabled={submitting}
-          className="tp-checkout-btn w-100"
+          className="easyunbox-checkout__btn"
         >
           {submitting ? "Sending…" : "Ask for Quote"}
         </button>

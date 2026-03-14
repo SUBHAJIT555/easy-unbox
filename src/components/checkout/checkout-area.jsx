@@ -12,22 +12,19 @@ const CheckoutArea = () => {
   const { cart_products } = useSelector((state) => state.cart);
 
   return (
-    <section
-      className="tp-checkout-area tp-checkout-area-neo pb-120"
-      style={{ backgroundColor: "var(--tp-grey-1, #FFF8F0)" }}
-    >
+    <section className="easyunbox-checkout">
       <div className="container">
         {cart_products.length === 0 && (
-          <div className="text-center pt-50">
-            <h3 className="py-2">No items in cart to request a quote</h3>
-            <Link href="/shop" className="tp-checkout-btn">
+          <div className="easyunbox-checkout__empty">
+            <h3 className="easyunbox-checkout__empty-title">No items in cart to request a quote</h3>
+            <Link href="/shop" className="easyunbox-checkout__empty-btn">
               Return to shop
             </Link>
           </div>
         )}
         {cart_products.length > 0 && (
-          <form onSubmit={handleSubmit(submitHandler)}>
-            <div className="row">
+          <form onSubmit={handleSubmit(submitHandler)} className="easyunbox-checkout__form">
+            <div className="row g-4">
               <div className="col-lg-7">
                 <CheckoutBillingArea register={register} errors={errors} />
               </div>
