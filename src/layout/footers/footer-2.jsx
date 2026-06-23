@@ -3,7 +3,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import contactInfo, { siteInfo } from '@/data/contact-info';
 import { Email, Location } from '@/svg';
-import logo from '@assets/img/logo/logo.svg';
+import logo from '@assets/img/logo/logo.png';
 import pay from '@assets/img/footer/footer-pay.png';
 import { submitToApi } from '@/lib/submit-api';
 import { notifyError, notifySuccess } from '@/utils/toast';

@@ -1,42 +1,46 @@
 import React, { useState } from 'react';
-import contactInfo from '@/data/contact-info';
+import contactInfo, { siteInfo } from '@/data/contact-info';
 
-const faqData = (email) => [
+const faqData = ({ email, phone, companyName }) => [
   {
     id: 1,
-    question: 'How do I request a quote for jewelry?',
-    answer: 'Browse our Shop, add the items you are interested in to your cart, and use the "Request Quote" option at checkout. We will review your request and send you a personalized quote by email within 1–2 business days.',
+    question: 'What products does Easy Unbox sell?',
+    answer: `${companyName} is your one-stop shop for mobile accessories, smart gadgets, computer and home electronics, books, stationery, men's, women's and kids wear, and fashion accessories. Browse the Shop page to explore all categories.`,
   },
   {
     id: 2,
-    question: 'Do you offer custom or personalized jewelry?',
-    answer: 'Yes. We can work with you on custom designs and personalization such as engraving. Please include your requirements when requesting a quote or contact us directly with your ideas.',
+    question: 'How do I request a quote?',
+    answer: 'Add the products you want to your cart, go to Checkout, and submit your details. Our team will review your request and send a personalized quote to your email within 1–2 business days.',
   },
   {
     id: 3,
-    question: 'What is your shipping policy?',
-    answer: 'Shipping options and delivery times depend on your location and the items ordered. We will include shipping details and estimated delivery in your quote. Contact us for specific shipping questions.',
+    question: 'Do you deliver across India?',
+    answer: 'Yes. We ship to most locations across India. Delivery time and shipping charges depend on your pin code and the items ordered. Final shipping details will be included in your quote.',
   },
   {
     id: 4,
-    question: 'How can I contact you?',
-    answer: `You can reach us via the Contact page, by email at ${email}, or by phone. We are happy to help with quotes, product questions, or any other inquiries.`,
+    question: 'Do I need an account to place an order?',
+    answer: 'No account is required. You can browse products, add them to your cart, and request a quote using the contact details you provide at checkout.',
   },
   {
     id: 5,
-    question: 'What is your return or refund policy?',
-    answer: 'We want you to be fully satisfied. Our Refund Policy covers returns, exchanges, and refunds. Please see our Refund Policy page for eligibility, timeframes, and how to initiate a return.',
+    question: 'What is your return and refund policy?',
+    answer: 'We want you to be fully satisfied with your purchase. Please see our Return Policy page for eligibility, timeframes, and step-by-step instructions on how to return or exchange an item.',
   },
   {
     id: 6,
-    question: 'Do I need an account to request a quote?',
-    answer: 'No. We operate on a request-for-quote basis. You can add items to your cart and request a quote without creating an account. We will communicate with you via the contact details you provide.',
+    question: 'How can I contact customer support?',
+    answer: `Reach us through the Contact page, email us at ${email}, or call ${phone}. We're happy to help with quotes, product questions, orders, and any other enquiries.`,
   },
 ];
 
 const FaqArea = () => {
   const [openId, setOpenId] = useState(null);
-  const faqs = faqData(contactInfo.email);
+  const faqs = faqData({
+    email: contactInfo.email,
+    phone: contactInfo.phone,
+    companyName: siteInfo.companyName,
+  });
 
   const toggle = (id) => {
     setOpenId(openId === id ? null : id);

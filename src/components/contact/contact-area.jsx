@@ -11,7 +11,7 @@ const ContactArea = () => {
           <div className="col-xl-8 col-lg-7">
             <div className="easyunbox-contact__form-wrap">
               <h2 className="easyunbox-contact__form-title">Send a message</h2>
-              <Contact Form />
+              <ContactForm />
             </div>
           </div>
           <div className="col-xl-4 col-lg-5">

@@ -17,8 +17,8 @@ export const contactInfo = {
   phoneRaw: '919876543210', // digits only for tel: link
   telLink: 'tel:+919876543210',
 
-  email: 'info@easy-unboxing.com',
-  mailtoLink: 'mailto:info@easy-unboxing.com',
+  email: 'info@easy-unbox.com',
+  mailtoLink: 'mailto:info@easy-unbox.com',
 
   // Indian address (line1, line2, city state pin)
   address: {

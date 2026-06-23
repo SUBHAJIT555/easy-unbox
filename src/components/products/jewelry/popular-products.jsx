@@ -5,6 +5,7 @@ import { useGetPopularProductByTypeQuery } from '@/redux/features/productApi';
 import ProductSliderItem from './product-slider-item';
 import ErrorMsg from '@/components/common/error-msg';
 import { HomeTwoPopularPrdLoader } from '@/components/loader';
+import { siteInfo } from '@/data/contact-info';
 
 const slider_setting = {
   slidesPerView: 5,
@@ -60,8 +61,8 @@ const PopularProducts = () => {
     <section className="easyunbox-popular-products">
       <div className="container">
         <div className="easyunbox-popular-products__header text-center mb-50">
-          <span className="easyunbox-popular-products__label">easy-unboxing.com</span>
-          <h2 className="easyunbox-popular-products__title">Popular on Easy Unboxing</h2>
+          <span className="easyunbox-popular-products__label">{siteInfo.domain}</span>
+          <h2 className="easyunbox-popular-products__title">Popular on {siteInfo.companyName}</h2>
         </div>
         <div className="easyunbox-popular-products__slider-wrap">
           {content}

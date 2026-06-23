@@ -22,8 +22,10 @@ set_exception_handler(function ($e) {
 // --- CORS ---
 $origin  = $_SERVER['HTTP_ORIGIN'] ?? '';
 $allowed = [
-    'https://supreme-cart.com',
-    'https://www.supreme-cart.com',
+    'https://easy-unbox.com',
+    'https://www.easy-unbox.com',
+    'http://localhost:3000',
+    'http://localhost:3001',
 ];
 if ($origin && in_array($origin, $allowed, true)) {
     header("Access-Control-Allow-Origin: $origin");
@@ -150,11 +152,11 @@ $smtpSecure = $_ENV['SMTP_SECURE'];
 
 $toAddresses = [['aditya@baharnani.com', 'Aditya Baharnani']];
 $fromEmail = $smtpUser;
-$fromName  = 'Snap Gears Website';
+$fromName  = 'Easy Unbox Website';
 
 // --- Brand styling ---
-$brandName = 'Supreme Cart';
-$tagline   = 'Where Innovation Meets Excellence.';
+$brandName = 'Easy Unbox';
+$tagline   = 'Your one-stop shop for tech, fashion, books, stationery & more.';
 $brandColor = '#0a2540';
 $muted = '#6b7280';
 $bg = '#f9fafb';

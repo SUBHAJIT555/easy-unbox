@@ -13,6 +13,7 @@ import { add_cart_product } from "@/redux/features/cartSlice";
 import { HomeTwoPopularPrdLoader } from "@/components/loader";
 import { notifyError } from "@/utils/toast";
 import { handleProductModal } from "@/redux/features/productModalSlice";
+import { siteInfo } from "@/data/contact-info";
 
 // slider setting
 const slider_setting = {
@@ -131,7 +132,7 @@ const PopularProducts = () => {
                   <TextShapeLine />
                 </span>
                 <h3 className="tp-section-title-2">
-                  Popular on Easy Unboxing.
+                  Popular on {siteInfo.companyName}.
                 </h3>
               </div>
             </div>

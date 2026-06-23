@@ -1,8 +1,10 @@
 /**
- * Page-specific meta descriptions for SEO. All include Easy Unboxing brand.
+ * Page-specific meta descriptions for SEO. All include Easy Unbox brand.
  * Used with <SEO pageTitle="..." description={seoDescriptions.key} /> in pages.
  */
-const brand = "Easy Unboxing";
+import { siteInfo } from "./contact-info";
+
+const brand = siteInfo.companyName;
 
 export const seoDescriptions = {
   home: `${brand} - Your one-stop shop for tech, fashion, books, stationery & more.`,

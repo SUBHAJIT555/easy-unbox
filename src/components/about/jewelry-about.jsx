@@ -1,6 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { siteInfo } from "@/data/contact-info";
 
 const HOME_PAGE_IMAGES = "/assets/images/HomePageImages";
 const ABOUT_IMAGES = {
@@ -18,7 +19,7 @@ const JewelryAbout = () => {
               <div className="easyunbox-about__img-main">
                 <Image
                   src={ABOUT_IMAGES.main}
-                  alt="Easy Unboxing - One-stop shop"
+                  alt={`${siteInfo.companyName} - One-stop shop`}
                   width={600}
                   height={500}
                   style={{ width: "100%", height: "auto" }}
@@ -27,7 +28,7 @@ const JewelryAbout = () => {
               <div className="easyunbox-about__img-thumb">
                 <Image
                   src={ABOUT_IMAGES.thumb}
-                  alt="Easy Unboxing collections"
+                  alt={`${siteInfo.companyName} collections`}
                   width={280}
                   height={220}
                   style={{ width: "100%", height: "auto" }}
@@ -37,12 +38,12 @@ const JewelryAbout = () => {
           </div>
           <div className="col-xl-7 col-lg-6">
             <div className="easyunbox-about__content">
-              <span className="easyunbox-about__label">easy-unboxing.com</span>
+              <span className="easyunbox-about__label">{siteInfo.domain}</span>
               <h2 className="easyunbox-about__title">
                 Your One-Stop Shop for Tech, Fashion & More
               </h2>
               <p className="easyunbox-about__text">
-                At <strong>Easy Unboxing</strong>, we bring you a wide range of
+                At <strong>{siteInfo.companyName}</strong>, we bring you a wide range of
                 products in one place. From <strong>mobile accessories</strong> and{" "}
                 <strong>smart gadgets</strong> to <strong>computer</strong> and{" "}
                 <strong>home electronics</strong>, plus <strong>books</strong>,{" "}

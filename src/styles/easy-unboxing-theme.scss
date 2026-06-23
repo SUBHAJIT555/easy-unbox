@@ -13,11 +13,12 @@
 }
 
 /* Always show dark logo on white header */
-.tp-header-area .logo .logo-light {
-  display: none !important;
-}
-.tp-header-area .logo .logo-dark {
-  display: block !important;
+.tp-header-area .logo img,
+.offcanvas__logo img {
+  display: block;
+  height: 40px;
+  width: auto;
+  max-width: 100%;
 }
 
 .tp-header-area.tp-header-style-transparent-white .tp-header-action-btn {
@@ -2186,7 +2187,7 @@ h1, h2, h3, h4, h5, h6 {
 
   img {
     display: block;
-    height: 36px;
+    height: 40px;
     width: auto;
     max-width: 100%;
   }
