@@ -41,8 +41,8 @@ const ReturnPolicyArea = () => {
                       The following items generally cannot be returned unless they are defective or we have made an error:
                     </p>
                     <ul className="easyunbox-legal-list" >
-                      <li >Custom or engraved jewelry</li>
-                      <li >Earrings (for hygiene reasons, unless sealed and unused)</li>
+                      <li >Custom, personalized, or made-to-order items</li>
+                      <li >Opened innerwear, cosmetics, or hygiene products</li>
                       <li >Items marked as final sale at the time of purchase</li>
                       <li >Gift cards</li>
                     </ul>

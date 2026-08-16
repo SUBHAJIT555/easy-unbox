@@ -42,13 +42,13 @@ const HeaderThree = () => {
                   </div>
                 </div>
                 <div className="col-xl-2 col-lg-2 col-6">
-                  <div className="tp-header-action d-flex align-items-center justify-content-end ml-50">
+                  <div className="tp-header-action d-flex align-items-center justify-content-end">
                     <div className="tp-header-action-item d-none d-sm-block">
                       <button onClick={() => setIsSearchOpen(true)} type="button" className="tp-header-action-btn tp-search-open-btn">
                         <Search />
                       </button>
                     </div>
-                    <div className="tp-header-action-item d-none d-sm-block">
+                    <div className="tp-header-action-item">
                       <Link href="/wishlist" className="tp-header-action-btn">
                         <WishlistTwo />
                         {wishlist?.length > 0 && (
@@ -56,7 +56,7 @@ const HeaderThree = () => {
                         )}
                       </Link>
                     </div>
-                    <div className="tp-header-action-item d-none d-sm-block">
+                    <div className="tp-header-action-item">
                       <button onClick={() => dispatch(openCartMini())} type="button" className="tp-header-action-btn cartmini-open-btn">
                         <CartTwo />
                         <span className="tp-header-action-badge">{quantity}</span>

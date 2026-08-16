@@ -48,7 +48,7 @@ const data = [
     img: "/assets/images/categoriesImages/WomensWear.webp",
   },
   {
-    title: "Kids's Wear",
+    title: "Kids Wear",
     slug: "kids-s-wear",
     id: 9,
     img: "/assets/images/categoriesImages/KidsWear.webp",

@@ -1,144 +1,187 @@
-import React, { useState } from "react";
+import React, { useMemo, useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import Slider from "react-slick";
-// internal
-import { ArrowNextTwo, ArrowPrevTwo } from "@/svg";
 import { siteInfo } from "@/data/contact-info";
+import MobileAccessoriesHero from "@assets/images/HeroImages/MobileAccessoriesHero.webp";
+import SmartGadgetsHero from "@assets/images/HeroImages/SmartGadgetsHero.webp";
+import ComputerAccessoriesHero from "@assets/images/HeroImages/ComputerAccessoriesHero.webp";
+import HomeElectronicsHero from "@assets/images/HeroImages/HomeElectronicsHero.webp";
+import BooksHero from "@assets/images/HeroImages/BooksHero.webp";
+import StationeryItemsHero from "@assets/images/HeroImages/StationeryItemsHero.webp";
+import MensWearHero from "@assets/images/HeroImages/MensWearHero.webp";
+import WomensWearHero from "@assets/images/HeroImages/WomensWearHero.webp";
+import KidsWearHero from "@assets/images/HeroImages/KidsWearHero.webp";
+import FashionAccessoriesHero from "@assets/images/HeroImages/FashionAccessoriesHero.webp";
 
-const HERO_IMAGES_BASE = "/assets/images/HeroImages";
-const HOME_ICONS_BASE = "/assets/images/HeroIcons";
+const { companyName, hero } = siteInfo;
 
-// slider data – 10 slides using images from HeroImages folder
-const getSliderData = () => [
-  { subtitle: siteInfo.companyName, title: "Mobile Accessories", img: `${HERO_IMAGES_BASE}/MobileAccessoriesHero.webp` },
-  { subtitle: siteInfo.domain, title: "Smart Gadgets", img: `${HERO_IMAGES_BASE}/SmartGadgetsHero.webp` },
-  { subtitle: siteInfo.companyName, title: "Computer Accessories", img: `${HERO_IMAGES_BASE}/ComputerAccessoriesHero.webp` },
-  { subtitle: siteInfo.domain, title: "Home Electronics", img: `${HERO_IMAGES_BASE}/HomeElectronicsHero.webp` },
-  { subtitle: siteInfo.companyName, title: "Books", img: `${HERO_IMAGES_BASE}/BooksHero.webp` },
-  { subtitle: siteInfo.domain, title: "Stationery Items", img: `${HERO_IMAGES_BASE}/StationeryItemsHero.webp` },
-  { subtitle: siteInfo.companyName, title: "Men's Wear", img: `${HERO_IMAGES_BASE}/MensWearHero.webp` },
-  { subtitle: siteInfo.domain, title: "Women's Wear", img: `${HERO_IMAGES_BASE}/WomensWearHero.webp` },
-  { subtitle: siteInfo.companyName, title: "Kids Wear", img: `${HERO_IMAGES_BASE}/KidsWearHero.webp` },
-  { subtitle: siteInfo.domain, title: "Fashion Accessories", img: `${HERO_IMAGES_BASE}/FashionAccessoriesHero.webp` },
+const getSlides = () => [
+  { title: "Mobile Accessories", img: MobileAccessoriesHero, tagline: "Cases, chargers & everyday essentials" },
+  { title: "Smart Gadgets", img: SmartGadgetsHero, tagline: "Wearables and connected devices" },
+  { title: "Computer Accessories", img: ComputerAccessoriesHero, tagline: "Gear for work, study and play" },
+  { title: "Home Electronics", img: HomeElectronicsHero, tagline: "Appliances for modern living" },
+  { title: "Books", img: BooksHero, tagline: "Reads for every age and mood" },
+  { title: "Stationery Items", img: StationeryItemsHero, tagline: "Office and school supplies" },
+  { title: "Men's Wear", img: MensWearHero, tagline: "Styles that move with you" },
+  { title: "Women's Wear", img: WomensWearHero, tagline: "Fresh looks for every season" },
+  { title: "Kids Wear", img: KidsWearHero, tagline: "Comfortable fits for little ones" },
+  { title: "Fashion Accessories", img: FashionAccessoriesHero, tagline: "Finish every outfit your way" },
 ];
 
-// slider nav data – product categories (icons from HeroIcons folder)
-const slider_nav_data = [
-  { icon: `${HOME_ICONS_BASE}/MobileAccessoriesIcon.webp`, title: <>Mobile <br /> Accessories</> },
-  { icon: `${HOME_ICONS_BASE}/SmartGadgetsIcon.webp`, title: <>Smart <br /> Gadgets</> },
-  { icon: `${HOME_ICONS_BASE}/ComputerAccessoriesIcon.webp`, title: <>Computer <br /> Accessories</> },
-  { icon: `${HOME_ICONS_BASE}/HomeElectronicsIcon.webp`, title: <>Home <br /> Electronics</> },
-  { icon: `${HOME_ICONS_BASE}/BooksIcon.webp`, title: <>Books</> },
-  { icon: `${HOME_ICONS_BASE}/StationeryItemsIcon.webp`, title: <>Stationery <br /> Items</> },
-  { icon: `${HOME_ICONS_BASE}/MensWearIcon.webp`, title: <>Men&apos;s <br /> Wear</> },
-  { icon: `${HOME_ICONS_BASE}/WomensWearIcon.webp`, title: <>Women&apos;s <br /> Wear</> },
-  { icon: `${HOME_ICONS_BASE}/KidsWearIcon.webp`, title: <>Kids&apos;s <br /> Wear</> },
-  { icon: `${HOME_ICONS_BASE}/FashionAccessoriesIcon.webp`, title: <>Fashion <br /> Accessories</> },
-];
+const ArrowIcon = ({ direction }) => (
+  <svg
+    width="18"
+    height="18"
+    viewBox="0 0 18 18"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    aria-hidden="true"
+  >
+    {direction === "prev" ? (
+      <path
+        d="M11 4L6 9L11 14"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinecap="square"
+        strokeLinejoin="miter"
+      />
+    ) : (
+      <path
+        d="M7 4L12 9L7 14"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinecap="square"
+        strokeLinejoin="miter"
+      />
+    )}
+  </svg>
+);
 
 const JewelryBanner = () => {
-  const [slider1, setSlider1] = useState(null);
-  const [slider2, setSlider2] = useState(null);
+  const [mainSlider, setMainSlider] = useState(null);
+  const [navSlider, setNavSlider] = useState(null);
+  const slides = useMemo(() => getSlides(), []);
 
-  const main_slider_setting = {
+  const mainSettings = {
     infinite: true,
     slidesToShow: 1,
     slidesToScroll: 1,
     arrows: false,
     fade: true,
-    centerMode: false,
+    speed: 450,
+    cssEase: "ease-in-out",
   };
 
-  const nav_slider_setting = {
+  const navSettings = {
     infinite: true,
     slidesToShow: 3,
     slidesToScroll: 1,
     vertical: true,
+    verticalSwiping: true,
     dots: false,
     arrows: false,
-    centerMode: false,
     focusOnSelect: true,
+    responsive: [
+      {
+        breakpoint: 992,
+        settings: {
+          vertical: false,
+          verticalSwiping: false,
+          slidesToShow: 4,
+          slidesToScroll: 1,
+        },
+      },
+      {
+        breakpoint: 576,
+        settings: {
+          vertical: false,
+          verticalSwiping: false,
+          slidesToShow: 3,
+          slidesToScroll: 1,
+        },
+      },
+    ],
   };
 
   return (
-    <>
-      <section className="tp-slider-area p-relative z-index-1 fix">
+    <section className="eu-hero">
+      <div className="container">
         <Slider
-          {...main_slider_setting}
-          asNavFor={slider2}
-          ref={(slider) => setSlider1(slider)}
-          className="tp-slider-active-4 khaki-bg"
+          {...mainSettings}
+          asNavFor={navSlider}
+          ref={(s) => setMainSlider(s)}
+          className="eu-hero__main"
         >
-          {getSliderData().map((item, i) => (
-            <div
-              key={i}
-              className="tp-slider-item-4 tp-slider-height-4 p-relative khaki-bg d-flex align-items-center"
-            >
-              <div className="tp-slider-thumb-4">
-                <Image src={item.img} alt={item.title} width={700} height={500} style={{ width: "100%", height: "auto" }} />
-                <div className="tp-slider-thumb-4-shape">
-                  <span className="tp-slider-thumb-4-shape-1"></span>
-                  <span className="tp-slider-thumb-4-shape-2"></span>
-                </div>
-              </div>
-
-              <div className="container">
-                <div className="row align-items-center">
-                  <div className="col-xl-6 col-lg-6 col-md-8">
-                    <div className="tp-slider-content-4 p-relative z-index-1">
-                      <span>{item.subtitle}</span>
-                      <h3 className="tp-slider-title-4">{item.title}</h3>
-                    </div>
+          {slides.map((item, i) => (
+            <div key={item.title} className="eu-hero__slide">
+              <div className="eu-hero__layout">
+                <div className="eu-hero__media-panel">
+                  <div className="eu-hero__image-wrap">
+                    <Image
+                      src={item.img}
+                      alt={item.title}
+                      priority={i === 0}
+                      sizes="(max-width: 575px) 92vw, (max-width: 991px) 75vw, 520px"
+                    />
                   </div>
+                </div>
+
+                <div className="eu-hero__panel">
+                  <span className="eu-hero__eyebrow">
+                    {hero?.eyebrow || companyName}
+                  </span>
+                  <h2 className="eu-hero__title">{item.title}</h2>
+                  <p className="eu-hero__text">{item.tagline}</p>
+                  <Link href="/shop" className="eu-hero__cta">
+                    Shop Now
+                  </Link>
                 </div>
               </div>
             </div>
           ))}
         </Slider>
 
-        {/* arrow start */}
-        <div className="tp-slider-arrow-4">
-          <button
-            className="tp-slider-3-button-prev slick-arrow"
-            onClick={() => slider1?.slickPrev()}
-          >
-            <ArrowPrevTwo />
-          </button>
-          <button
-            className="tp-slider-3-button-next slick-arrow"
-            onClick={() => slider1?.slickNext()}
-          >
-            <ArrowNextTwo />
-          </button>
-        </div>
-        {/* arrow end */}
+        <div className="eu-hero__bottom">
+          <div className="eu-hero__nav" aria-label="Category slides">
+            <Slider
+              {...navSettings}
+              asNavFor={mainSlider}
+              ref={(s) => setNavSlider(s)}
+              className="eu-hero__nav-slider"
+            >
+              {slides.map((item) => (
+                <div key={item.title} className="eu-hero__nav-item">
+                  <div className="eu-hero__nav-thumb">
+                    <Image src={item.img} alt="" width={52} height={52} />
+                  </div>
+                  <p className="eu-hero__nav-label">{item.title}</p>
+                </div>
+              ))}
+            </Slider>
+          </div>
 
-        <div className="tp-slider-nav">
-          <Slider
-            {...nav_slider_setting}
-            asNavFor={slider1}
-            ref={(slider) => setSlider2(slider)}
-            className="tp-slider-nav-active"
-          >
-            {slider_nav_data.map((item, i) => (
-              <div
-                key={i}
-                className="tp-slider-nav-item d-flex align-items-center"
-              >
-                <div className="tp-slider-nav-icon">
-                  <span>
-                    <Image src={item.icon} alt="" width={28} height={28} style={{ width: "28px", height: "28px", objectFit: "contain" }} />
-                  </span>
-                </div>
-                <div className="tp-slider-nav-content">
-                  <h3 className="tp-slider-nav-title">{item.title}</h3>
-                </div>
-              </div>
-            ))}
-          </Slider>
+          <div className="eu-hero__controls">
+            <button
+              type="button"
+              className="eu-hero__arrow"
+              aria-label="Previous slide"
+              onClick={() => mainSlider?.slickPrev()}
+            >
+              <ArrowIcon direction="prev" />
+            </button>
+            <button
+              type="button"
+              className="eu-hero__arrow"
+              aria-label="Next slide"
+              onClick={() => mainSlider?.slickNext()}
+            >
+              <ArrowIcon direction="next" />
+            </button>
+          </div>
         </div>
-      </section>
-    </>
+      </div>
+    </section>
   );
 };
 

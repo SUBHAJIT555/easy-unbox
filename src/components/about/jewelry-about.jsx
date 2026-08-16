@@ -2,12 +2,8 @@ import React from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { siteInfo } from "@/data/contact-info";
-
-const HOME_PAGE_IMAGES = "/assets/images/HomePageImages";
-const ABOUT_IMAGES = {
-  main: `${HOME_PAGE_IMAGES}/About-01.webp`,
-  thumb: `${HOME_PAGE_IMAGES}/About-02.webp`,
-};
+import aboutMain from "@assets/images/HomePageImages/About-01.webp";
+import aboutThumb from "@assets/images/HomePageImages/About-02.webp";
 
 const JewelryAbout = () => {
   return (
@@ -18,7 +14,7 @@ const JewelryAbout = () => {
             <div className="easyunbox-about__images">
               <div className="easyunbox-about__img-main">
                 <Image
-                  src={ABOUT_IMAGES.main}
+                  src={aboutMain}
                   alt={`${siteInfo.companyName} - One-stop shop`}
                   width={600}
                   height={500}
@@ -27,7 +23,7 @@ const JewelryAbout = () => {
               </div>
               <div className="easyunbox-about__img-thumb">
                 <Image
-                  src={ABOUT_IMAGES.thumb}
+                  src={aboutThumb}
                   alt={`${siteInfo.companyName} collections`}
                   width={280}
                   height={220}

@@ -8,6 +8,7 @@ import contact_img from '@assets/img/icon/contact.png';
 import language_img from '@assets/img/icon/language-flag.png';
 import MobileCategory from '@/layout/headers/header-com/mobile-category';
 import MobileMenus from './mobile-menus';
+import contactInfo from '@/data/contact-info';
 
 const OffCanvas = ({ isOffCanvasOpen, setIsCanvasOpen,categoryType = "electronics" }) => {
   const [isCategoryActive, setIsCategoryActive] = useState(false);
@@ -64,7 +65,7 @@ const OffCanvas = ({ isOffCanvasOpen, setIsCanvasOpen,categoryType = "electronic
               </div>
               <div className="offcanvas__contact-content">
                 <h3 className="offcanvas__contact-title">
-                  <a href="tel:098-852-987">004524865</a>
+                  <a href={contactInfo.telLink}>{contactInfo.phone}</a>
                 </h3>
               </div>
             </div>

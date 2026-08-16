@@ -2,12 +2,8 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { siteInfo } from "@/data/contact-info";
-
-const HOME_PAGE_IMAGES = "/assets/images/HomePageImages";
-const COLLECTION_IMAGES = {
-  leftBg: `${HOME_PAGE_IMAGES}/TECH,FASHION&MORE.webp`,
-  rightThumb: `${HOME_PAGE_IMAGES}/Tech,Fashion,Books&More.webp`,
-};
+import leftBg from "@assets/images/HomePageImages/TECH,FASHION&MORE.webp";
+import rightThumb from "@assets/images/HomePageImages/Tech,Fashion,Books&More.webp";
 
 const JewelryCollectionBanner = () => {
   return (
@@ -18,7 +14,7 @@ const JewelryCollectionBanner = () => {
             <div className="easyunbox-collection-banner__left">
               <div className="easyunbox-collection-banner__left-img">
                 <Image
-                  src={COLLECTION_IMAGES.leftBg}
+                  src={leftBg}
                   alt=""
                   fill
                   sizes="(min-width: 992px) 50vw, 100vw"
@@ -54,7 +50,7 @@ const JewelryCollectionBanner = () => {
               <span className="easyunbox-collection-banner__right-label">{siteInfo.domain}</span>
               <Link href="/shop" className="easyunbox-collection-banner__right-img-wrap">
                 <Image
-                  src={COLLECTION_IMAGES.rightThumb}
+                  src={rightThumb}
                   alt="Tech, Fashion, Books & More"
                   width={400}
                   height={400}

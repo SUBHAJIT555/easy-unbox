@@ -14,7 +14,7 @@ const nextConfig = {
       beforeFiles: [
         {
           source: '/api/submit.php',
-          destination: 'http://localhost/ecom/api/submit.php',
+          destination: 'http://localhost/easy-unbox/api/submit.php',
         },
       ],
       afterFiles: [],
